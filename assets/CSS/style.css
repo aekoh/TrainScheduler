@@ -4,7 +4,11 @@ body {
 
 /*JUMBOTRON*/
 .jumbotron {
+<<<<<<< HEAD
     background-color: orange;
+=======
+    background-color: palevioletred;
+>>>>>>> 350859bbe820f9ae42e9172e732bdf57cafd17c5
     background-repeat: no-repeat;
     background-position: center;
     -webkit-background-size: cover;
@@ -32,13 +36,18 @@ td {
 }
 .table-responsive {
     float:left;
+<<<<<<< HEAD
     width:45%;
 
+=======
+    width:50%;
+>>>>>>> 350859bbe820f9ae42e9172e732bdf57cafd17c5
 }
 
 
 
 #inputgroup {
+<<<<<<< HEAD
   border: 5px solid black;  
   width: 45%;
   float:right;  
@@ -51,4 +60,11 @@ color: white
 p {
     color: white;
     text-shadow: 3px 3px 5px black, 0 0 25px orange, 0 0 5px gold;
+=======
+  border: 2px solid palevioletred;
+  width:40%;
+  float:right;  
+  right: 70px;
+
+>>>>>>> 350859bbe820f9ae42e9172e732bdf57cafd17c5
 }
