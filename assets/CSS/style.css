@@ -1,0 +1,54 @@
+body {
+    background-color: #fafafa;
+}
+
+/*JUMBOTRON*/
+.jumbotron {
+    background-color: orange;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+	color: white;
+}
+
+.jumbotron h1 {
+    font-family: 'Gravitas One', cursive;
+    font-size: 80px;
+}
+
+.jumbotron p {
+	font-family: 'Open Sans', sans-serif;
+}
+
+table {
+text-align: center;
+width: 100px;
+padding-left: 0 auto;
+}
+
+td {
+    text-align:center;
+}
+.table-responsive {
+    float:left;
+    width:45%;
+
+}
+
+
+
+#inputgroup {
+  border: 5px solid black;  
+  width: 45%;
+  float:right;  
+  right: 200px;
+  box-shadow: 14px 14px black;
+  background-color: lightcoral;
+color: white
+}
+
+p {
+    color: white;
+    text-shadow: 3px 3px 5px black, 0 0 25px orange, 0 0 5px gold;
+}
