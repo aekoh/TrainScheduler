@@ -96,6 +96,6 @@
   console.log("Arrival time: " + moment(nextTrain).format("hh:mm"));
  
  // Adds data to table in html
- $("#tables > tbody").append("<tr> <td>" + empName + "</td> <td>" + jobName + "</td> <td>" + jobFreq + "</td> <td>" + moment(nextTrain).format("hh:mm") + "</td> <td>" + tMinutesTillTrain + "</td> </tr>");
+ $("#tables > tbody").append("<tr> <td>" + empName + "</td> <td>" + jobName + "</td> <td>" + firstShift + "</td> <td>" + jobFreq + "</td> <td>" + tMinutesTillTrain + "</td> </tr>");
  
  });
