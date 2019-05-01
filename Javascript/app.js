@@ -8,16 +8,16 @@
       authDomain: "trainscheduler-b11f4.firebaseapp.com",
       databaseURL: "https://trainscheduler-b11f4.firebaseio.com",
       projectId: "trainscheduler-b11f4",
-      storageBucket: "trainscheduler-b11f4.appspot.com",
+      storageBucket: "", // trainscheduler-b11f4.appspot.com
       messagingSenderId: "232356613633"
     };
-    firebase.initializeApp(Config);
+    firebase.initializeApp(config);
  
  
  
     var clearInputs = function() {
       $("#name").val("");
-      $("#job-Title").val("");
+      $("#jobTitle").val("");
       $("#first-Shift").val("");
       $("#frequency").val("");
  
@@ -31,7 +31,7 @@
  
       // User input
       var employeeName = $("#name").val().trim();
-      var jobTitle = $("#job-Title").val().trim();
+      var jobTitle = $("#jobTitle").val().trim();
       var firstShift = $("#first-Shift").val().trim();
       var frequency = $("#frequency").val().trim();
  
@@ -40,7 +40,8 @@
           name: employeeName,
           job: jobTitle,
           firstShift: firstShift,
-          frequency: frequency
+          frequency: frequency,
+
       }
  
       // Adds data to Firbase
@@ -50,6 +51,7 @@
       console.log(addInput.job);
       console.log(addInput.firstShift);
       console.log(addInput.frequency);
+      console.log(addInput.minAway);
  
       // Clears input fields
       clearInputs();
