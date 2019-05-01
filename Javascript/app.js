@@ -14,6 +14,7 @@
     };
     firebase.initializeApp(config);
   
+<<<<<<< HEAD
 
 
     var clearInputs = function() {
@@ -21,6 +22,15 @@
       $("#job-Title").val("");
       $("#first-Shift").val("");
       $("#frequency").val("");
+=======
+ 
+    var clearInputs = function() {
+      $("#name").val("");
+      $("#jobTitle").val("");
+      $("#arrival").val("");
+      $("#nextShift").val("");
+      $("#minAway").val("");
+>>>>>>> 7e8c3975d9d0bbc046c450c31596c94b4f299c55
   
   };
   
@@ -31,32 +41,38 @@
   $("#addUpdate").on("click",function() {
   
       // User input
-      var employeeName = $("#name").val().trim();
-      var jobTitle = $("#job-Title").val().trim();
-      var firstShift = $("#first-Shift").val().trim();
-      var frequency = $("#frequency").val().trim();
+      var name = $("#name").val().trim();
+      var job = $("#jobTitle").val().trim();
+      var arrival = $("#arrival").val().trim();
+      var nextShift = $("#nextShift").val().trim();
+      var minutes = $("#minAway").val().trim();
+      
   
       // Create local object to hold user input
-      var addInput = {
-          name: employeeName, 
-          job: jobTitle, 
-          firstShift: firstShift, 
-          frequency: frequency
+      var addUpdate = {
+          name: name, 
+          jobTitle: job, 
+          arrivalTime: arrival, 
+          shiftTime: nextShift,
+          minutesAway: minutes
+
       }
   
       // Adds data to Firbase
-      createUpdate.ref().push(addInput);
-  
-      console.log(addInput.name);
-      console.log(addInput.job);
-      console.log(addInput.firstShift);
-      console.log(addInput.frequency);
+      createUpdate.ref().push(addUpdate);
+
+      console.log(addUpdate.name);
+      console.log(addUpdate.jobTitle);
+      console.log(addUpdate.arrivalTime);
+      console.log(addUpdate.shiftTime);
+      console.log(addUpdate.minutesAway);
   
       // Clears input fields
       clearInputs();
   
       return false;
   
+<<<<<<< HEAD
   
   });
 
@@ -78,6 +94,30 @@ createUpdate.ref().on("child_added", function(childSnapshot) {
   // Moment.js y'all
   var firstTimeConverted = moment(firstShift, "HH:mm").subtract(1, "years");
   console.log(firstTimeConverted);
+=======
+    }); 
+
+
+    // Creates an event in Firebase
+createTrain.ref().on("child_added", function(childSnapshot) {
+
+  // Event with variables
+  var employeeName = childSnapshot.val().name;
+  var jobDes = childSnapshot.val().jobTitle;
+  var arrivalT = childSnapshot.val().arrivalTime;
+  var shiftT = childSnapshot.val().shiftTime;
+  var minAw = childSnapshot.val().minutesAway;
+
+  console.log(employeeName);
+  console.log(jobDes);
+  console.log(arrivalT);
+  console.log(shiftT);
+  console.log(minAw);
+
+  // Moment.js y'all
+  var firstTimeConverted = moment(shiftT, "HH:mm").subtract(1, "years");
+  console.log(arrivalTConverted);
+>>>>>>> 7e8c3975d9d0bbc046c450c31596c94b4f299c55
 
   var currentTime = moment();
   console.log("Current time: "+ moment(currentTime).format("hh:mm"));
@@ -85,16 +125,27 @@ createUpdate.ref().on("child_added", function(childSnapshot) {
   var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
   console.log("Difference in time: " + diffTime);
 
+<<<<<<< HEAD
   var tRemainder = diffTime % jobFreq;
   console.log(tRemainder);
 
   var tMinutesTillTrain = jobFreq - tRemainder;
+=======
+  var tRemainder = diffTime % arrivalT;
+  console.log(tRemainder);
+
+  var tMinutesTillTrain = arrivalT - tRemainder;
+>>>>>>> 7e8c3975d9d0bbc046c450c31596c94b4f299c55
   console.log("Minutes till train: " + tMinutesTillTrain);
 
   var nextTrain = moment().add(tMinutesTillTrain, "minutes");
   console.log("Arrival time: " + moment(nextTrain).format("hh:mm"));
 
 // Adds data to table in html
+<<<<<<< HEAD
 $("#tables > tbody").append("<tr> <td>" + empName + "</td> <td>" + jobName + "</td> <td>" + jobFreq + "</td> <td>" + moment(nextTrain).format("hh:mm") + "</td> <td>" + tMinutesTillTrain + "</td> </tr>");
+=======
+$("#updateSched > tbody").append("<tr> <td>" + employeeName + "</td> <td>" + jobDes + "</td> <td>" + arrivalT + "</td> <td>" + shiftT + "</td> <td>" + minutesAway + moment(nextTrain).format("hh:mm") + "</td> <td>" + tMinutesTillTrain + "</td> </tr>");
+>>>>>>> 7e8c3975d9d0bbc046c450c31596c94b4f299c55
 
 });

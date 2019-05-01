@@ -13,10 +13,6 @@ This is an easy on the go way to quickly Update a boss on your arrival time and 
 How users can get started with the project ?
 go ahead and add  your name, estimated arival, shift title as well as how far away you are in minutes. Help them help you.
 
-Where users can get help with your project?
 
-
-Who maintains and contributes to the project ?
-aekoh -
 
 
